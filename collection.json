@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "526b5ee4-89c4-463c-9281-c690919e4e6a",
+		"name": "Covid19",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{HOST}}/cases?country=India",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{HOST}}/cases?country=India",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"cases"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "India"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{HOST}}/history?country=India&status=deaths",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{HOST}}/history?country=India&status=deaths",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"history"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "India"
+						},
+						{
+							"key": "status",
+							"value": "deaths"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{HOST}}/vaccines?country=India",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/vaccines?country=India",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"vaccines"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "India"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fail check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{HOST}}/cas",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"cas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "https://covid-api.mmediagroup.fr/v1"
+		}
+	]
+}
