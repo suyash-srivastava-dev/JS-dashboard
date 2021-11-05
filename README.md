@@ -21,9 +21,7 @@ Run's on port 4000
 ## **Screenshots**
 
 Basic Dashboard with table of status details.
-
-
-![image](https://user-images.githubusercontent.com/68404906/139577995-a7ed7816-ff35-4446-80cc-6cba5a2a3b69.png)
+![image](https://user-images.githubusercontent.com/68404906/140437557-eb267c8a-f46b-48a5-a656-fe53bc634c27.png)
 
 
 Newman-htmlextra report in a new tab.
