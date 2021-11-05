@@ -1,10 +1,11 @@
 var path = require('path');
 var fs = require('fs');
 const csv=require('csvtojson');
+const latestFileName = require("./latestFile")
 
 function csvTojsonParse()
 {
-const csvFilePath='./report.csv'
+const csvFilePath='./newman'+'/'+latestFileName('./newman').file;
 var outPath = path.join(__dirname, './check.json');
 
 // const resultJson_new=[];

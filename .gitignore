@@ -9332,3 +9332,8 @@ node_modules/year/LICENSE-MIT
 node_modules/year/package.json
 node_modules/year/README.md
 node_modules/year/test.js
+node_modules/newman-reporter-myket_reporter/index.js
+node_modules/newman-reporter-myket_reporter/LICENSE
+node_modules/newman-reporter-myket_reporter/Makefile
+node_modules/newman-reporter-myket_reporter/package.json
+node_modules/newman-reporter-myket_reporter/README.md

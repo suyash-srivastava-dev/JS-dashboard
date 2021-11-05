@@ -2,41 +2,41 @@ const newman = require('newman');
 // const csv =require('csv-parser');
 const fs=require('fs');
 const results=[];
-function reporterxml(){
-newman.run({
-    collection: './collection.json', // Collection URL from a public link or the Postman API can also be used
-    reporters: ['csvextra'],
-    iterationCount: 1,
-    reporter: {
-        csvextra: {
-            export: './report.csv',
-            // template: './template.hbs'
-            // logs: true,
-            // showOnlyFails: true,
-            // noSyntaxHighlighting: true,
-            // testPaging: true,
-            // browserTitle: "My Newman report",
-            // title: "My Newman Report",
-            // titleSize: 4,
-            // omitHeaders: true,
-            // skipHeaders: "Authorization",
-            // omitRequestBodies: true,
-            // omitResponseBodies: true,
-            // hideRequestBody: ["Login"],
-            // hideResponseBody: ["Auth Request"],
-            // showEnvironmentData: true,
-            // skipEnvironmentVars: ["API_KEY"],
-            // showGlobalData: true,
-            // skipGlobalVars: ["API_TOKEN"],
-            // skipSensitiveData: true,
-            // showMarkdownLinks: true,
-            // showFolderDescription: true,
-            // timezone: "Australia/Sydney",
-            // skipFolders: "folder name with space,folderWithoutSpace",
-            // skipRequests: "request name with space,requestNameWithoutSpace"
-        }
-    }
-});
+// function reporterxml(){
+// newman.run({
+//     collection: './collection.json', // Collection URL from a public link or the Postman API can also be used
+//     reporters: ['csvextra'],
+//     iterationCount: 1,
+//     reporter: {
+//         csvextra: {
+//             export: './report.csv',
+//             // template: './template.hbs'
+//             // logs: true,
+//             // showOnlyFails: true,
+//             // noSyntaxHighlighting: true,
+//             // testPaging: true,
+//             // browserTitle: "My Newman report",
+//             // title: "My Newman Report",
+//             // titleSize: 4,
+//             // omitHeaders: true,
+//             // skipHeaders: "Authorization",
+//             // omitRequestBodies: true,
+//             // omitResponseBodies: true,
+//             // hideRequestBody: ["Login"],
+//             // hideResponseBody: ["Auth Request"],
+//             // showEnvironmentData: true,
+//             // skipEnvironmentVars: ["API_KEY"],
+//             // showGlobalData: true,
+//             // skipGlobalVars: ["API_TOKEN"],
+//             // skipSensitiveData: true,
+//             // showMarkdownLinks: true,
+//             // showFolderDescription: true,
+//             // timezone: "Australia/Sydney",
+//             // skipFolders: "folder name with space,folderWithoutSpace",
+//             // skipRequests: "request name with space,requestNameWithoutSpace"
+//         }
+//     }
+// });
 
 
 // fs.createReadStream('./newman/newman-run-report-2021-10-30-12-11-07-038-0.csv')
@@ -53,7 +53,7 @@ newman.run({
 //             }
 //             console.log("The file was saved!");
 //         }); 
-    }
+    // }
 
    
 
@@ -61,7 +61,7 @@ function reporterhtml()
 {
     newman.run({
         collection: './collection.json', // Collection URL from a public link or the Postman API can also be used
-        reporters: ['htmlextra'],
+        reporters: ['htmlextra','myket_reporter'],
         iterationCount: 1,
         reporter: {
             htmlextra: {
@@ -71,8 +71,8 @@ function reporterhtml()
                 // showOnlyFails: true,
                 // noSyntaxHighlighting: true,
                 // testPaging: true,
-                // browserTitle: "My Newman report",
-                // title: "My Newman Report",
+                browserTitle: "EISL report",
+                title: "EISL Dashboard Report",
                 // titleSize: 4,
                 // omitHeaders: true,
                 // skipHeaders: "Authorization",
@@ -96,7 +96,7 @@ function reporterhtml()
 }
     function reporters()
     {
-        reporterxml();
+        // reporterxml();
         reporterhtml();
     }
     reporters()
