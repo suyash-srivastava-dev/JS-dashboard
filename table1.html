@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <title>Export HTML data to excel</title>
+    <h2>US NASDAQ Stocks price list</h2>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script type="text/javascript" src="downloadFile.js"></script>
+    <style>
+      #tblStocks {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #tblStocks td,
+      #tblStocks th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #tblStocks tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      #tblStocks tr:hover {
+        background-color: #ddd;
+      }
+
+      #tblStocks th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #294c67;
+        color: white;
+      }
+    </style>
+    <script type="text/javascript" src="csvToObject.js"></script>
+  </head>
+  <body>
+    <!-- (A) ALL WE NEED IS A <DIV> CONTAINER -->
+    <div id="tblStocks" cellpadding="0" cellspacing="0"></div>
+
+    <script>
+      // (B) DUMMY ARRAY
+      var data =
+
+      // (C) CREATE HTML TABLE
+      // (C1) HTML TABLE ELEMENT
+      var myTable = document.createElement("table"),
+        row = myTable.insertRow(),
+        cell;
+
+      // (C2) LOOP THROUGH ARRAY & GENERATE ROWS-CELLS
+      var perrow = 2; // 2 CELLS PER ROW
+      data.forEach((value, i) => {
+        // ADD CELL
+        cell = row.insertCell();
+        cell.innerHTML = value;
+
+        // CLICK ON CELL TO DO SOMETHING
+        // cell.onclick = FUNCTION;
+
+        // TO PASS IN A RUNNING NUMBER OR PARAMETER
+        // cell.onclick = () => { console.log(i); };
+
+        // BREAK INTO NEXT ROW
+        var next = i + 1;
+        if (next % perrow == 0 && next != data.length) {
+          row = myTable.insertRow();
+        }
+      });
+
+      // (D) ATTACH TABLE TO CONTAINER
+      document.getElementById("tblStocks").appendChild(myTable);
+    </script>
+
+    <table id="tblStocks" cellpadding="0" cellspacing="0">
+      <tr>
+        <th>Company</th>
+        <th>Group</th>
+        <th>Prev Close($)</th>
+        <th>Current Price($)</th>
+        <th>Change(%)</th>
+      </tr>
+      <tr>
+        <td>Life HealthCare INC</td>
+        <td>A</td>
+        <td>35.58</td>
+        <td>38.45</td>
+        <td>+8.06</td>
+      </tr>
+      <tr>
+        <td>Den Networks Ltd</td>
+        <td>A</td>
+        <td>72.55</td>
+        <td>77.60</td>
+        <td>+6.96</td>
+      </tr>
+      <tr>
+        <td>RMG Cements</td>
+        <td>B</td>
+        <td>140</td>
+        <td>135</td>
+        <td>-3.57</td>
+      </tr>
+    </table>
+    <br />
+    <button onclick="exportData()">
+      <span class="glyphicon glyphicon-download"></span>
+      Download list
+    </button>
+  </body>
+</html>

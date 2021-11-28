@@ -1,5 +1,0 @@
-iteration,collectionName,requestName,method,url,status,code,responseTime,responseSize,executed,failed,extraData,skipped
-"1","Covid19","{{HOST}}/cases?country=India","GET","https://covid-api.mmediagroup.fr/v1/cases?country=India","OK","200","800","5724","Status code is 200",,""
-"1","Covid19","{{HOST}}/history?country=India&status=deaths","GET","https://covid-api.mmediagroup.fr/v1/history?country=India&status=deaths","OK","200","552","13980","Status code is 200",,""
-"1","Covid19","{{HOST}}/vaccines?country=India","GET","https://covid-api.mmediagroup.fr/v1/vaccines?country=India","OK","200","558","5464","Status code is 200",,""
-"1","Covid19","Fail check","GET","https://covid-api.mmediagroup.fr/v1/cas","Forbidden","403","484","42",,"Status code is 200",""

@@ -3,5 +3,9 @@
 echo "hello"
 
 node reporter.js 
-node csvParseToJson.js 
+
+# cd contoller
+node csvToObject.js
+
+# node csvParseToJson.js 
 node expressApp.js 
