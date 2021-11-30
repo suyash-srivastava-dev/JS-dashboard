@@ -10,7 +10,10 @@
 
 ## **Status**
 
-WIP for executing function's in sequence.
+### WIP
+1. WIP for executing function's in sequence(async await).
+2. Template execution using handlebar for donloadable html report.
+3. certificate key for token generation: implementation.
 
 Currently runs with ./exc.sh 
 
